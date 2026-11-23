@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarefas — MINDSIDE</title>
+<link rel="stylesheet" href="css/global.css?v=3.6">
+</head>
+<body data-area="tarefas">
+  <div class="app-shell"><div id="app-shell" style="display:contents;"></div></div>
+
+  <div class="modal-overlay" id="task-modal-overlay">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="task-modal-title">
+      <h3 id="task-modal-title">Nova tarefa</h3>
+      <form id="task-form">
+        <input type="hidden" id="task-id">
+        <div class="field"><label for="task-title">Título</label><input type="text" id="task-title" required></div>
+        <div class="field"><label for="task-description">Descrição</label><input type="text" id="task-description"></div>
+        <div class="form-row">
+          <div class="field"><label for="task-priority">Prioridade</label>
+            <select id="task-priority"><option value="baixa">Baixa</option><option value="media" selected>Média</option><option value="alta">Alta</option><option value="urgente">Urgente</option></select>
+          </div>
+          <div class="field"><label for="task-category">Categoria</label>
+            <select id="task-category"><option value="estudo">Estudo</option><option value="trabalho">Trabalho</option><option value="saude">Saúde</option><option value="lazer">Lazer</option><option value="pessoal">Pessoal</option><option value="geral" selected>Geral</option></select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label for="task-deadline">Prazo</label><input type="date" id="task-deadline"></div>
+          <div class="field"><label for="task-duration">Duração (min)</label><input type="number" id="task-duration" value="30" min="5"></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label for="task-scheduled-date">Data agendada</label><input type="date" id="task-scheduled-date"></div>
+          <div class="field"><label for="task-scheduled-time">Horário agendado</label><input type="time" id="task-scheduled-time"></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label for="task-goal-id">Vincular a Objetivo</label>
+            <select id="task-goal-id"><option value="">Sem vínculo</option></select>
+          </div>
+          <div class="field"><label for="task-status">Status</label>
+            <select id="task-status"><option value="pendente">Pendente</option><option value="em_andamento">Em andamento</option><option value="concluida">Concluída</option></select>
+          </div>
+        </div>
+        <div id="task-conflict-warning" class="form-error"></div>
+        <div class="modal-actions">
+          <button type="button" class="btn" id="task-cancel-btn">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="extract-notes-overlay">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="extract-notes-title">
+      <h3 id="extract-notes-title">Extrair ações de anotação</h3>
+      <p class="section-subtitle" style="margin-bottom:14px;">
+        Cole um resumo de aula, ata de reunião ou mensagem. O MindSide filtra o texto e transforma apenas as ações reais em tarefas no seu painel.
+      </p>
+      <form id="extract-notes-form">
+        <div class="field">
+          <label for="extract-notes-text">Texto ou anotação</label>
+          <textarea id="extract-notes-text" class="input-control" rows="7" maxlength="15000" placeholder="Ex.: Pessoal, lembrar de entregar o trabalho de Redes até sexta-feira e enviar o diagrama no portal antes das 18h..." required></textarea>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn" id="extract-notes-cancel">Cancelar</button>
+          <button type="submit" class="btn btn-primary" id="extract-notes-submit">Extrair e criar tarefas</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/theme.js?v=3.6"></script>
+  <script src="js/api.js?v=3.6"></script>
+  <script src="js/toast.js?v=3.6"></script>
+  <script src="js/area-theme.js?v=3.6"></script>
+  <script src="js/slime.js?v=3.6"></script>
+  <script src="js/auth.js?v=3.6"></script>
+  <script src="js/shell.js?v=3.6"></script>
+  <script src="js/tarefas.js?v=3.6"></script>
+</body>
+</html>

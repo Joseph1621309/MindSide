@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assistente — MINDSIDE</title>
+<link rel="stylesheet" href="css/global.css?v=3.6">
+</head>
+<body data-area="ia">
+  <div class="app-shell"><div id="app-shell" style="display:contents;"></div></div>
+
+  <div class="modal-overlay" id="edit-sugg-overlay">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="edit-sugg-modal-title">
+      <h3 id="edit-sugg-modal-title">Editar sugestão</h3>
+      <form id="edit-sugg-form">
+        <input type="hidden" id="edit-sugg-id">
+        <div class="field"><label for="edit-sugg-title">Título</label><input type="text" id="edit-sugg-title" maxlength="200" required></div>
+        <div class="form-row">
+          <div class="field"><label for="edit-sugg-type">Tipo</label>
+            <select id="edit-sugg-type"><option value="tarefa">Tarefa</option><option value="compromisso">Compromisso</option></select>
+          </div>
+          <div class="field"><label for="edit-sugg-priority">Prioridade</label>
+            <select id="edit-sugg-priority"><option value="baixa">Baixa</option><option value="media">Média</option><option value="alta">Alta</option><option value="urgente">Urgente</option></select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label for="edit-sugg-date">Data</label><input type="date" id="edit-sugg-date"></div>
+          <div class="field"><label for="edit-sugg-time">Horário</label><input type="time" id="edit-sugg-time"></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label for="edit-sugg-duration">Duração (min)</label><input type="number" id="edit-sugg-duration" min="1" max="1440" value="30"></div>
+          <div class="field"><label for="edit-sugg-category">Categoria</label>
+            <select id="edit-sugg-category"><option value="estudo">Estudo</option><option value="trabalho">Trabalho</option><option value="saude">Saúde</option><option value="lazer">Lazer</option><option value="pessoal">Pessoal</option><option value="geral">Geral</option></select>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn" id="edit-sugg-cancel">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Salvar edição</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/theme.js?v=3.6"></script>
+  <script src="js/api.js?v=3.6"></script>
+  <script src="js/toast.js?v=3.6"></script>
+  <script src="js/area-theme.js?v=3.6"></script>
+  <script src="js/slime.js?v=3.6"></script>
+  <script src="js/auth.js?v=3.6"></script>
+  <script src="js/shell.js?v=3.6"></script>
+  <script src="js/assistente.js?v=3.6"></script>
+</body>
+</html>
